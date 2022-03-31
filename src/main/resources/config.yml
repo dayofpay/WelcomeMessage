@@ -1,0 +1,16 @@
+message: ## The message which will be send to player when joining the server ( Supporting PlaceHolderAPI )
+- '&6&l&m&o-------------------'
+- '&c> &a&oHello, %player_name% in %server_name% !'
+- '&c> &a&oYour ping is: %player_ping% !'
+- '&6&l&m&o-------------------'
+logConsole: false ## This can be set to true or false, if is set to true the plugin will send message to the console when player joins / leaves the server
+pluginPrefix: '&7WelcomeMessage &c» &a' ## The plugin prefix
+reloadMessage: 'Reloaded Successfully' ## Reload message
+globalAnnounce: false ## Set to true if you want to announce in global chat message when someone joins/leaves the server
+globalJoinMessage: '&7[&6+&7]&a%player_name%&7[&6+&7]'
+globalLeaveMessage: '&7[&6-&7]&c%player_name%&7[&6-&7]'
+enableSpecialMessage: false ## if this is set to true, all players which have the specialMessagePermission will have separate special message
+specialMessagePermission: 'welcomemessage.special'
+adminPermission: 'welcomemessage.admin'
+noPermission: '&CSorry ! You Dont have enough permissions'
+specialMessage: '&6&oSpecial Player %player_name% joined the server !!'

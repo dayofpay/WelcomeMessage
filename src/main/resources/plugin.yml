@@ -1,0 +1,10 @@
+name: WelcomeMessage
+version: '${project.version}'
+main: me.dayofpay.welcomemessage.Welcomemessage
+authors: [ dayofpay ]
+description: A plugin which sends welcome message when somebody joins the server
+website: https://v-devs.online
+softdepend: [PlaceholderAPI]
+commands:
+  welcomemessage:
+    description: Main plugin command
