@@ -14,18 +14,15 @@ public class Events implements Listener {
     private static Events plugin;
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onLeave(PlayerQuitEvent leaveEvent){
-        if(Welcomemessage.getInstance().getConfig().getBoolean("globalAnnounce") == true){
+        if(Welcomemessage.getInstance().getConfig().getBoolean("globalAnnounce")){
             String leaveMessage = Welcomemessage.getInstance().getConfig().getString("globalLeaveMessage");
             leaveMessage = PlaceholderAPI.setPlaceholders(leaveEvent.getPlayer(),leaveMessage);
             Welcomemessage.getInstance().getServer().broadcastMessage(ChatColor.translateAlternateColorCodes('&',leaveMessage));
         }
-        else{
-
-        }
     }
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onJoin(PlayerJoinEvent joinEvent) {
-        if(Welcomemessage.getInstance().getConfig().getBoolean("globalAnnounce") == true){
+        if(Welcomemessage.getInstance().getConfig().getBoolean("globalAnnounce")){
             String joinMessage = Welcomemessage.getInstance().getConfig().getString("globalJoinMessage");
             joinMessage = PlaceholderAPI.setPlaceholders(joinEvent.getPlayer(),joinMessage);
             Welcomemessage.getInstance().getServer().broadcastMessage(ChatColor.translateAlternateColorCodes('&',joinMessage));
@@ -33,14 +30,14 @@ public class Events implements Listener {
         else{
 
         }
-        if(Welcomemessage.getInstance().getConfig().getBoolean("enableSpecialMessage") == true && joinEvent.getPlayer().hasPermission(Welcomemessage.getInstance().getConfig().getString("specialMessagePermission"))){
+        if(Welcomemessage.getInstance().getConfig().getBoolean("enableSpecialMessage") && joinEvent.getPlayer().hasPermission(Welcomemessage.getInstance().getConfig().getString("specialMessagePermission"))){
             String specialMessage = Welcomemessage.getInstance().getConfig().getString("specialMessage");
             specialMessage = PlaceholderAPI.setPlaceholders(joinEvent.getPlayer(),specialMessage);
             Welcomemessage.getInstance().getServer().broadcastMessage(ChatColor.translateAlternateColorCodes('&',specialMessage));
         }else{
 
         }
-        if(Welcomemessage.getInstance().getConfig().getBoolean("logConsole") == true){
+        if(Welcomemessage.getInstance().getConfig().getBoolean("logConsole")){
             Welcomemessage.getInstance().getServer().getConsoleSender().sendMessage(ChatColor.GREEN + joinEvent.getPlayer().getName() + " Joined the server ");
         }
         else{
@@ -50,7 +47,7 @@ public class Events implements Listener {
             String joinText = msg;
             joinText = PlaceholderAPI.setPlaceholders(joinEvent.getPlayer(), joinText);
 
-            joinEvent.getPlayer().sendMessage(joinText);
+            joinEvent.getPlayer().sendMessage(ChatColor.translateAlternateColorCodes('&',joinText));
         }
     }
 }
